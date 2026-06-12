@@ -6,12 +6,13 @@
 
 ## 🎯 Objectif
 
+
 Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_article" de notre dataset  suivant la colonne  "news_category"**. Vous trouverez la source de  notre **dataset** à l'addresse suivant :
 [lien du dataset](https://drive.google.com/file/d/1S6D_YMvB6W7yggkPG23Rm_u5FV9Z6_DZ/view?usp=drive_link)
----
 
 ---
 
+---
 ## 🗂️ Structure du projet  
 
 ```
@@ -30,6 +31,7 @@ Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_artic
 ```
 ---
 
+
 ---
 
 ## 📊 Métriques évaluées
@@ -38,6 +40,8 @@ Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_artic
 - **F1-score** — équilibre précision / rappel
 - **Matrice de confusion** — analyse des erreurs par classe
 - **Courbes d'apprentissage** — détection overfitting / underfitting
+
+---
 
 ---
 
@@ -52,6 +56,16 @@ Avant d’écrire la moindre ligne de code, nous inspectons le dataset :
 
 voir le repertoire  `data-inspect`  pour plus de détails. 
 
+---
+
+---
+## Outils
+
+Nous utions Python 3.9+, PyTorch ≥2.0, transformers (Hugging Face), Gradio, scikit-learn GPU recommandé (Google Colab accepté)
+
+---
+
+---
 ## 🚀 Lancer le projet
 
 ```bash
@@ -71,6 +85,7 @@ python demo.py
 
 ---
 
+---
 ## 🔍 Compétences développées
 
 **Techniques**
@@ -85,5 +100,5 @@ python demo.py
 - Interpréter les métriques : accuracy, F1-score, matrice de confusion
 - Comprendre l'apport du pré-entraînement (transfer learning) en NLP
 - Rédiger une documentation technique claire (README.md)
-
+---
 
