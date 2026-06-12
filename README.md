@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 Objectif
+## Objectif
 
 
 Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_article" de notre dataset  suivant la colonne  "news_category"**. Vous trouverez la source de  notre **dataset** à l'addresse suivant :
@@ -13,7 +13,7 @@ Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_artic
 ---
 
 ---
-## 🗂️ Structure du projet  
+## Structure du projet  
 
 ```
 .
@@ -34,7 +34,7 @@ Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_artic
 
 ---
 
-## 📊 Métriques évaluées
+## Métriques évaluées
 
 - **Accuracy** — taux de classification globale
 - **F1-score** — équilibre précision / rappel
@@ -66,7 +66,7 @@ Nous utions Python 3.9+, PyTorch ≥2.0, transformers (Hugging Face), Gradio, sc
 ---
 
 ---
-## 🚀 Lancer le projet
+## Lancer le projet
 
 ```bash
 
@@ -86,7 +86,7 @@ python demo.py
 ---
 
 ---
-## 🔍 Compétences développées
+## Compétences développées
 
 **Techniques**
 - Charger et tokenizer un dataset texte avec la librairie transformers (Hugging Face)
