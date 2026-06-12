@@ -12,7 +12,7 @@ Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_artic
 
 
 
----
+
 ## Structure du projet  
 
 ```
@@ -29,10 +29,10 @@ Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_artic
     └── utils.py                           <- métriques, seed, visualisations
 
 ```
----
 
 
----
+
+
 
 ## Métriques évaluées
 
@@ -41,9 +41,9 @@ Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_artic
 - **Matrice de confusion** — analyse des erreurs par classe
 - **Courbes d'apprentissage** — détection overfitting / underfitting
 
----
 
----
+
+
 
 ## Analyse du dataset 
 
@@ -56,16 +56,16 @@ Avant d’écrire la moindre ligne de code, nous inspectons le dataset :
 
 voir le repertoire  `data-inspect`  pour plus de détails. 
 
----
 
----
+
+
 ## Outils
 
 Nous utions Python 3.9+, PyTorch ≥2.0, transformers (Hugging Face), Gradio, scikit-learn GPU recommandé (Google Colab accepté)
 
----
 
----
+
+
 ## Lancer le projet
 
 ```bash
@@ -83,9 +83,9 @@ python demo.py
  
 ```
 
----
 
----
+
+
 ## Compétences développées
 
 **Techniques**
