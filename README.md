@@ -100,5 +100,13 @@ python demo.py
 - Interpréter les métriques : accuracy, F1-score, matrice de confusion
 - Comprendre l'apport du pré-entraînement (transfer learning) en NLP
 - Rédiger une documentation technique claire (README.md)
+
+
+## Notre binôme 
+
+- Alpha Oumar DIALLO 
+- **langevin-programmer**: Jean-Fabrice OUFFOUE
+
+
 ---
 
