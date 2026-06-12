@@ -1,4 +1,24 @@
+[lien du dataset](https://drive.google.com/file/d/1S6D_YMvB6W7yggkPG23Rm_u5FV9Z6_DZ/view?usp=drive_link)
+
+
 ### STRUCTURE DU PROJET 
+
+```
+.
+└── bert-classification-inshort_news_data-1-2.csv
+    ├── data
+    │   └── inshort_news_data-1 2.csv 
+    ├── dataset.py
+    ├── demo.py
+    ├── model.py
+    ├── README.md
+    ├── requirements.txt
+    ├── train.py
+    └── utils.py
+
+```
+
+### STRUCTURE A SUPPRIMER
 
 ```
 bert-classification-nomdataset/
@@ -21,4 +41,3 @@ bert-classification-nomdataset/
 
 ```
 
-[lien du dataset](https://drive.google.com/file/d/1S6D_YMvB6W7yggkPG23Rm_u5FV9Z6_DZ/view?usp=drive_link)
