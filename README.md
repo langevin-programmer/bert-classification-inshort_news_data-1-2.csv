@@ -103,8 +103,8 @@ python demo.py
 
 
 ## Notre binôme 
-
-- Alpha Oumar DIALLO 
+ 
+- **aljibreendiallo**: Alpha Oumar DIALLO 
 - **langevin-programmer**: Jean-Fabrice OUFFOUE
 
 
