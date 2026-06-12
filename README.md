@@ -2,7 +2,7 @@
 
 # Fine-tuner un modèle BERT pour la classification de texte et déployer une démo interactive
 
----
+
 
 ## Objectif
 
@@ -10,7 +10,7 @@
 Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_article" de notre dataset  suivant la colonne  "news_category"**. Vous trouverez la source de  notre **dataset** à l'addresse suivant :
 [lien du dataset](https://drive.google.com/file/d/1S6D_YMvB6W7yggkPG23Rm_u5FV9Z6_DZ/view?usp=drive_link)
 
----
+
 
 ---
 ## Structure du projet  
