@@ -7,7 +7,7 @@
 ## Objectif
 
 
-Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_article" de notre dataset  suivant la colonne  "news_category"**. Vous trouverez la source de  notre **dataset** à l'addresse suivant :
+Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_article" de notre dataset  suivant la colonne  "news_category"**. Vous trouverez la source de  notre **dataset** à l'addresse suivante :
 [lien du dataset](https://drive.google.com/file/d/1S6D_YMvB6W7yggkPG23Rm_u5FV9Z6_DZ/view?usp=drive_link)
 
 
@@ -108,5 +108,5 @@ python demo.py
 - **langevin-programmer**: Jean-Fabrice OUFFOUE
 
 
----
+
 
