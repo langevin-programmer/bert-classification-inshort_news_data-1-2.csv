@@ -127,6 +127,7 @@ bert_news/
 ├── train.py          # Pipeline complet : données, entraînement, évaluation, inférence
 ├── demo.py           # Interface Gradio interactive
 ├── utils.py          # Seed, métriques, visualisations, Weights & Biases
+|-- notebook.ipynb    # notebook exécuté et structuré du projet
 └── requirements.txt  # Dépendances Python
 ```
 
