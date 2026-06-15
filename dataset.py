@@ -22,7 +22,7 @@ class TextClassificationDataset(Dataset):
 
     Args:
         texts        (List[str]): Textes bruts à classer.
-        labels       (List[int]): Labels entiers correspondants (0, 1, 2 …).
+        labels       (List[int]): Labels entiers correspondants (0, 1, 2).
         tokenizer    (PreTrainedTokenizerBase): Tokenizer HuggingFace
                                                (ex. bert-base-multilingual-cased).
         max_length   (int): Longueur maximale de séquence (en tokens).
