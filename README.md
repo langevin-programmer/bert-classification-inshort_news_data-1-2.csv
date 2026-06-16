@@ -63,7 +63,45 @@ news_headline + ". " + news_article  →  BERT  →  Catégorie prédite
 ```
 
 
+## Données
 
+### Dataset attendu
+
+Placer le fichier CSV dans `data/` :
+
+```
+data/
+└── inshort_news_data-1 2.csv
+```
+
+Le CSV doit contenir au minimum ces trois colonnes :
+
+| Colonne          | Description            | Exemple                                  |
+|------------------|------------------------|------------------------------------------|
+| `news_headline`  | Titre de l'article     | *India launches new space mission...*    |
+| `news_article`   | Corps de l'article     | *ISRO successfully launched...*          |
+| `news_category`  | Catégorie (label cible)| `science`, `sports`, `technology`...     |
+
+> Le chemin et les noms de colonnes sont configurables dans `CONFIG` (fichier `model.py`).
+
+### Nettoyage appliqué
+
+1. Suppression des lignes avec `NaN` dans les 3 colonnes
+2. Strip des espaces en début/fin de chaîne
+3. Suppression des lignes avec titre ou article vide
+4. Concaténation : `text_combined = headline + ". " + article`
+
+### Inspecter le dataset avant d'entraîner
+
+```bash
+python train.py --inspect
+```
+
+Génère deux graphiques d'analyse :
+- `class_distribution_inspection.png` -  distribution et proportions par classe
+- `token_length_distribution.png` -  histogrammes des longueurs BERT et boxplots par classe
+
+> **Recommandation :** lancer `--inspect` avant tout entraînement pour vérifier que `max_length=256` couvre bien ≥ 95% des paires titre+article de votre dataset.
 
 
 ## Métriques évaluées
