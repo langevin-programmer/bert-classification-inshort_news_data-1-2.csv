@@ -5,7 +5,7 @@
 > **Dakar Institute of Technology (DIT)  Master 2 Intelligence Artificielle**  
 > **Devoir N°3 Deep Learning**  
 > **Réalisé par : Alpha Oumar DIALLO & Jean-Fabrice OUFFOUE** 
-> Modèle : `google-bert/bert-base-multilingual-cased` | Dataset : InShort News | 7 catégories
+> Modèle : `google-bert/bert-base-multilingual-cased` | Dataset : InShort News Data | 7 catégories
 
 ---
 
