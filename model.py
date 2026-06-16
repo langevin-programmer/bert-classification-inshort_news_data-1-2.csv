@@ -88,4 +88,4 @@ def load_saved_model(save_dir: str = DEFAULT_SAVE_DIR) -> tuple:
     return model, tokenizer, class_names
 
 
-print(' Fonctions model.py définies.')
+# print(' Fonctions model.py définies.')
