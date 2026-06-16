@@ -138,11 +138,14 @@ Avant de lancer localement le projet , il importe de suivre les étapes suivante
  
 # 4. Installer les dépendances 
   pip install -r requirements.txt
+ 
+```
+### Interface de démonstration
 
- 
-# Lancer application Gradio, s'assurer avant d'avoir téléchargé le repertoire best_model 
-  python demo.py
- 
+```bash
+ # Lancer application Gradio, s'assurer avant d'avoir téléchargé le repertoire best_model 
+ python demo.py
+# Ouvrir → http://localhost:7860
 ```
 
 
