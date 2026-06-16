@@ -129,6 +129,12 @@ Vous les  touverez via les différents liens ci-dessous:
 
 Nous vous informons par ailleurs qu'avant de déployer application ci-dessus, nous avons déployé une version qui permet de classifier uniquement les **titres** des articles(le modèle associé est en en effet entrainé uniquement sur les colonnes `news_headline` et `news_category`). Nous vous donnons également accès à cette dernière [application](https://huggingface.co/spaces/jfo25/classification-titres-articles-de-presse) ainsi qu'au [modèle](https://huggingface.co/jfo25/model-classification-titres-articles-de-presse/tree/main) associé. 
 
+ ### Fonctionnalités
+
+- Saisie libre du titre et/ou de l'article
+- Prédiction instantanée avec score de confiance
+- Graphique interactif des probabilités sur toutes les classes
+- Indicateur du mode d'entrée (cas idéal ou fallback)
 
 ## Outils
 
