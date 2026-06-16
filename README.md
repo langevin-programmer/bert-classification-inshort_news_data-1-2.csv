@@ -8,12 +8,39 @@
 > Modèle : `google-bert/bert-base-multilingual-cased` | Dataset : InShort News Data | 7 catégories
 
 ---
+## Table des matières
+
+1. [Vue d'ensemble](#vue-densemble)
+2. [Résultats obtenus](#résultats-obtenus)
+3. [Architecture du projet](#architecture-du-projet)
+4. [Installation](#installation)
+5. [Données](#données)
+6. [Utilisation](#utilisation)
+7. [Structure du code](#structure-du-code)
+8. [Hyperparamètres](#hyperparamètres)
+9. [Approche combinée](#approche-combinée)
+10. [Analyse des résultats](#analyse-des-résultats)
+11. [Interface de démonstration](#interface-de-démonstration)
+12. [Fichiers générés](#fichiers-générés)
+13. [Dépendances](#dépendances)
+
+---
 
 ## Objectif
 
 
 Dans ce projet , nous allons **classifier la colonne "news_headline"+"news_article" de notre dataset  suivant la colonne  "news_category"**. Vous trouverez la source de  notre **dataset** à l'addresse suivante :
 [lien du dataset](https://drive.google.com/file/d/1S6D_YMvB6W7yggkPG23Rm_u5FV9Z6_DZ/view?usp=drive_link)
+
+Ce projet fine-tune **BERT multilingue** pour classifier automatiquement des articles de presse en 7 catégories thématiques à partir du dataset **InShort News**.
+
+L'approche optimale retenue consiste à concaténer le **titre** et le **corps de l'article** (`combined`) avant de les passer à BERT, ce qui maximise la richesse sémantique de l'entrée et la confiance des prédictions.
+
+```
+news_headline + ". " + news_article  →  BERT  →  Catégorie prédite
+```
+
+**Classes détectées :** `automobile` · `entertainment` · `politics` · `science` · `sports` · `technology` · `world`
 
 
 
