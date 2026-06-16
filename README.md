@@ -119,10 +119,6 @@ voir le repertoire [data-inspect](data-inspect)  pour plus de détails.
 
 
 
-## Outils
-
-Nous utilisons Python 3.9+, PyTorch ≥2.0, transformers (Hugging Face), Gradio, scikit-learn GPU recommandé (Google Colab accepté)
-
 ##  Déploiement de nos applications et modèles
 
 Nous avons déployé notre application et modèle sur la plateforme [huggingface](https://huggingface.co/). 
@@ -133,6 +129,10 @@ Vous les  touverez via les différents liens ci-dessous:
 
 Nous vous informons par ailleurs qu'avant de déployer application ci-dessus, nous avons déployé une version qui permet de classifier uniquement les **titres** des articles(le modèle associé est en en effet entrainé uniquement sur les colonnes `news_headline` et `news_category`). Nous vous donnons également accès à cette dernière [application](https://huggingface.co/spaces/jfo25/classification-titres-articles-de-presse) ainsi qu'au [modèle](https://huggingface.co/jfo25/model-classification-titres-articles-de-presse/tree/main) associé. 
 
+
+## Outils
+
+Nous utilisons Python 3.9+, PyTorch ≥2.0, transformers (Hugging Face), Gradio, scikit-learn GPU recommandé (Google Colab accepté)
 
 ## Dépendances
 
