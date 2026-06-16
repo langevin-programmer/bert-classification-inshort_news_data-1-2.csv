@@ -10,7 +10,7 @@
 ---
 ## Table des matières
 
-1. [Vue d'ensemble](#vue-densemble)
+1. [Objectif](#Objectif)
 2. [Résultats obtenus](#résultats-obtenus)
 3. [Architecture du projet](#architecture-du-projet)
 4. [Installation](#installation)
@@ -123,25 +123,25 @@ Avant de lancer localement le projet , il importe de suivre les étapes suivante
 ```bash
 
 # 1. cloner le projet à partir de Github
-git clone https://github.com/langevin-programmer/bert-classification-inshort_news_data-1-2.csv
+     git clone https://github.com/langevin-programmer/bert-classification-inshort_news_data-1-2.csv
 
 # 2. Créer un environnement virtuel
-  python -m venv venv
+     python -m venv venv
 
 # 3. Activer environnement virtuel(En étant dans le repertoire où se trouve le repertoire venv)
 
 # Sur Window
- venv/Scripts/activate
+  venv/Scripts/activate
 
 # Sur MAC/Linux
   source venv/bin/activate
  
 # 4. Installer les dépendances 
-pip install -r requirements.txt
+  pip install -r requirements.txt
 
  
 # Lancer application Gradio, s'assurer avant d'avoir téléchargé le repertoire best_model 
-python demo.py
+  python demo.py
  
 ```
 
