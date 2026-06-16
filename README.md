@@ -140,7 +140,7 @@ Avant de lancer localement le projet , il importe de suivre les étapes suivante
   pip install -r requirements.txt
  
 ```
-### Interface de démonstration
+### 1. Interface de démonstration
 
 ```bash
  # Lancer application Gradio, s'assurer avant d'avoir téléchargé le repertoire best_model 
