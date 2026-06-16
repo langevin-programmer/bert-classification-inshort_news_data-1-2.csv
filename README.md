@@ -2,7 +2,12 @@
 
 # Fine-tuner un modèle BERT pour la classification de texte et déployer une démo interactive
 
+> **Dakar Institute of Technology (DIT)  Master 2 Intelligence Artificielle**  
+> **Devoir N°3 Deep Learning**  
+> **Réalisé par : Alpha Oumar DIALLO & Jean-Fabrice OUFFOUE** 
+> Modèle : `google-bert/bert-base-multilingual-cased` | Dataset : InShort News | 7 catégories
 
+---
 
 ## Objectif
 
