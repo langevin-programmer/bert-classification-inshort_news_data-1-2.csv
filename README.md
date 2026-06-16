@@ -114,7 +114,7 @@ Avant de lancer localement le projet , il importe de suivre les étapes suivante
 
 - Disposer d'une machine(ordinateur) avec au moins `Git` et  `Python` installé;
 - Cloner localement(sur votre machine)  le repertoire de notre projet sur cette la plateforme [Github](https://github.com/);
-- créer un environnement virtuel Python; 
+- créer et activer un environnement virtuel Python; 
 - Installez les dépendances du projet que vous retrouvez dans le [requirements.txt](./requirements.txt);
 - Disposer en plus dans arborescence du projet  du repertoire `best_model`(sauvegarde de notre modèle) que vous pouvez  obtenir en éxécutant localement(si votre machine dispose  d'assez de ressources **GPU**) `python train.py` , dans le **cas contraire**, nous vous recommandons la plateforme [Google Colab](https://colab.research.google.com/) ,pour cela, nous vous fournissons en plus  notre [Notebook Colab](https://colab.research.google.com/drive/1SJz78eFJkzCT273h7R6_NZajl-4NnX1H?usp=sharing)  utilisé pour l'obtenir(le Repertoire`best_model`) et bien d'autres(les différents graphiques que vous trouvez dans les repertoires  [data-inspect](data-inspect) et [graphiques-du-model](graphiques-du-model).Mieux , vous pouvez le télécharger directement sur [notre repectoire HuggingFace](https://huggingface.co/jfo25/DL2-Devoir-3-bert-model-classification-articles-de-presse/tree/main), cela peut prendre quelques minutes , il s'agit en effet d'un fichier d'environ  **700MB**;
 - lancer la commande `python demo.py`;
@@ -122,15 +122,25 @@ Avant de lancer localement le projet , il importe de suivre les étapes suivante
 
 ```bash
 
-# cloner le projet à partir de Github
+# 1. cloner le projet à partir de Github
 git clone https://github.com/langevin-programmer/bert-classification-inshort_news_data-1-2.csv
 
-# Installer les dépendances
-# Assurez-vous avant d'activer un environnement virtuel 
+# 2. Créer un environnement virtuel
+  python -m venv venv
+
+# 3. Activer environnement virtuel(En étant dans le repertoire où se trouve le repertoire venv)
+
+# Sur Window
+ venv/Scripts/activate
+
+# Sur MAC/Linux
+  source venv/bin/activate
+ 
+# 4. Installer les dépendances 
 pip install -r requirements.txt
 
  
-# Lancer application Gradio
+# Lancer application Gradio, s'assurer avant d'avoir téléchargé le repertoire best_model 
 python demo.py
  
 ```
