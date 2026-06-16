@@ -148,6 +148,21 @@ Avant de lancer localement le projet , il importe de suivre les étapes suivante
 # Ouvrir → http://localhost:7860
 ```
 
+### 2. Entraînement complet
+
+```bash
+python train.py
+```
+
+Lance le pipeline complet :
+
+1. Chargement et nettoyage du CSV
+2. Split stratifié 80 / 20 (préserve la distribution des classes)
+3. Fine-tuning BERT sur `num_epochs` epochs avec suivi W&B
+4. Sauvegarde automatique du meilleur checkpoint (selon `val_loss`)
+5. Génération des courbes d'apprentissage et de la matrice de confusion
+
+
 
 
 
