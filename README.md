@@ -8,21 +8,29 @@
 > Modèle : `google-bert/bert-base-multilingual-cased` | Dataset : InShort News Data | 7 catégories
 
 ---
-## Table des matières
+# Table des matières
 
 1. [Objectif](#Objectif)
-2. [Résultats obtenus](#résultats-obtenus)
-3. [Architecture du projet](#architecture-du-projet)
-4. [Installation](#installation)
-5. [Données](#données)
+2. [Structure du projet](#Structure-du-projet)
+3. [Données](#Données)
+4. [Analyse du dataset](#Analyse-du-dataset)
+5. [Structure du code](#Structure-du-code)
 6. [Utilisation](#utilisation)
 7. [Structure du code](#structure-du-code)
-8. [Hyperparamètres](#hyperparamètres)
-9. [Approche combinée](#approche-combinée)
-10. [Analyse des résultats](#analyse-des-résultats)
-11. [Interface de démonstration](#interface-de-démonstration)
-12. [Fichiers générés](#fichiers-générés)
-13. [Dépendances](#dépendances)
+8. [Déploiement de nos applications et modèles
+](#Déploiement-de-nos-applications-et-modèles
+)
+9. [Outils](#Outils)
+10. [Dépendances](#Dépendances)
+11. [Lancer le projet](#Lancer-le-projet)
+12. [Fichiers générés](#fichiers-générés) 
+13. [Hyperparamètres](#Hyperparamètres)
+14. [Approche combinée](#Approche-combinée)
+15. [Métriques évaluées](#Métriques-évaluées)
+16. [Résultats obtenus](#Résultats-obtenus)
+17. [Analyse des résultats](#Analyse-des-résultats)
+18. [Compétences développées](#Compétences-développées)
+19. [Notre binôme](#Notre-binôme)
 
 ---
 
