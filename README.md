@@ -71,7 +71,7 @@ Placer le fichier CSV dans `data/` :
 
 ```
 data/
-└── inshort_news_data-1 2.csv
+└── inshort_news_data-1-2.csv
 ```
 
 Le CSV doit contenir au minimum ces trois colonnes :
