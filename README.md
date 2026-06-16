@@ -145,7 +145,7 @@ voir le repertoire [data-inspect](data-inspect)  pour plus de détails.
 Contient toutes les fonctions de gestion du modèle.
 
 ```python
-from model import CONFIG, load_model, load_tokenizer, save_model, load_saved_model
+from model import load_model, load_tokenizer, save_model, load_saved_model
 ```
 
 | Fonction             | Rôle                                                      |
