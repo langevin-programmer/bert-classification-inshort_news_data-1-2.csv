@@ -58,7 +58,7 @@ def set_seed(seed: int = 42) -> None:
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark     = False
-    print(f'🌱 Seed fixée à {seed} — résultats reproductibles.')
+    print(f'Seed fixée à {seed} — résultats reproductibles.')
 
 
 # 2- Métriques
