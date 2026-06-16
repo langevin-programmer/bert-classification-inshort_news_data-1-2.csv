@@ -310,6 +310,21 @@ Lance le pipeline complet :
 4. Sauvegarde automatique du meilleur checkpoint (selon `val_loss`)
 5. Génération des courbes d'apprentissage et de la matrice de confusion
 
+
+## Fichiers générés
+
+Après l'exécution complète, les fichiers suivants sont créés :
+
+| Fichier                               | Généré par          | Contenu                                           |
+|---------------------------------------|---------------------|---------------------------------------------------|
+| `best_model/`                         | `train.py`          | Checkpoint BERT + tokenizer + `class_names.json`  |
+| `best_model/class_names.json`         | `train.py`          | Mapping indice → nom de classe                    |
+| `class_distribution.png`             | `train.py`          | Distribution des classes (set d'entraînement)     |
+| `class_distribution_inspection.png`  | `--inspect`         | Distribution + camembert détaillé                 |
+| `token_length_distribution.png`      | `--inspect`         | Histogrammes longueurs BERT par colonne           |
+| `confusion_matrix.png`               | `train.py`          | Matrice de confusion du meilleur checkpoint       |
+| `learning_curves.png`                | `train.py`          | Courbes loss / accuracy / F1 par epoch            |
+
 ## Hyperparamètres
 
 Tous les hyperparamètres sont centralisés dans `CONFIG` (`utils.py`) :
