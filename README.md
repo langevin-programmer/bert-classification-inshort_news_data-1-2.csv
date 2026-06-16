@@ -464,6 +464,48 @@ world       [         0              1          2        5        0          9  
 | automobile   | technology   |  3 | Véhicules électriques / technologie automobile   |
 | entertainment| sports       |  3 | E-sport ou célébrités du sport                   |
 
+
+## Analyse des résultats
+
+### Ce que montrent les courbes d'apprentissage
+
+**Cross-Entropy Loss :**
+- Train loss : chute rapide de 0.75 (epoch 1) à 0.11 (epoch 4) - le modèle apprend efficacement
+- Val loss : descend de 0.29 à 0.22 de façon progressive et régulière
+- L'écart train/val reste faible → **pas d'overfitting significatif**
+
+**Accuracy :**
+- Val accuracy démarre déjà à 92% dès l'epoch 1, confirmant que les représentations pré-entraînées de BERT multilingue sont directement exploitables
+- La progression train (78% → 97%) vs val (92% → 95%) est normale : le modèle apprend plus vite sur train mais généralise bien
+
+**F1-macro :**
+- Courbe verte stable et croissante : 90% → 94%
+- La progression entre epochs 1 et 4 est régulière, sans plateau brutal ni dégradation
+
+### Ce que montre la matrice de confusion
+
+La diagonale dominante confirme une très bonne classification sur l'ensemble des 7 classes. Les erreurs se concentrent sur les **frontières sémantiques naturelles** entre catégories proches :
+
+- **technology ↔ world** (9 erreurs dans chaque sens) : articles sur la géopolitique des Big Tech, régulations numériques mondiales
+- **technology ↔ science** (5+5 erreurs) : recherche fondamentale appliquée, IA, biotechnologies
+- **world ↔ science** (5 erreurs) : grandes découvertes à impact mondial
+
+Ces confusions sont **sémantiquement attendues** et difficiles à éliminer sans données supplémentaires ou augmentation ciblée sur ces classes.
+
+### Points forts du modèle
+
+- `politics` : F1 = 98.2% — vocabulaire politique très spécifique et distinctif
+- `sports` : F1 = 98.2% — noms propres (équipes, compétitions) très discriminants
+- `entertainment` : F1 = 96.7% — célébrités et culture populaire bien séparées
+
+### Piste d'amélioration
+
+Pour améliorer `technology` (F1 = 87%) :
+1. Augmenter les données de la classe (sur-échantillonnage ou data augmentation)
+2. Ajouter des exemples ambigus technology/world/science au dataset d'entraînement
+3. Utiliser `class_weight` dans `CrossEntropyLoss` pour pénaliser davantage les erreurs sur `technology`
+
+---
 ## Compétences développées
 
 **Techniques**
