@@ -521,6 +521,7 @@ Pour améliorer `technology` (F1 = 87%) :
 - Comprendre l'apport du pré-entraînement (transfer learning) en NLP
 - Rédiger une documentation technique claire (README.md)
 
+---
 
 ## Notre binôme 
  
