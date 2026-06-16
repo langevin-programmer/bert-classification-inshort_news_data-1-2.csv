@@ -138,6 +138,75 @@ Avant d’écrire la moindre ligne de code, nous inspectons le dataset :
 voir le repertoire [data-inspect](data-inspect)  pour plus de détails. 
 
 
+## Structure du code
+
+### `model.py` — Configuration & modèle
+
+Contient le dictionnaire `CONFIG` centralisé et toutes les fonctions de gestion du modèle.
+
+```python
+from model import CONFIG, load_model, load_tokenizer, save_model, load_saved_model
+```
+
+| Fonction             | Rôle                                                      |
+|----------------------|-----------------------------------------------------------|
+| `load_tokenizer()`   | Télécharge le tokenizer depuis HuggingFace Hub            |
+| `load_model()`       | Charge BERT avec tête de classification linéaire          |
+| `save_model()`       | Sauvegarde modèle + tokenizer + `class_names.json`        |
+| `load_saved_model()` | Recharge un checkpoint pour l'inférence ou la démo        |
+
+### `dataset.py` — Dataset PyTorch
+
+```python
+from dataset import TextClassificationDataset
+```
+
+Tokenise chaque texte à l'initialisation et retourne pour chaque exemple un dictionnaire de tenseurs :
+
+```python
+{
+    'input_ids':      LongTensor [max_length],   # IDs des tokens BERT
+    'attention_mask': LongTensor [max_length],   # 1=token réel, 0=padding
+    'label':          LongTensor [],             # Indice entier de la classe
+}
+```
+
+> Le masque d'attention est **indispensable** : sans lui, BERT traite les tokens de padding `[PAD]` comme du contenu réel, ce qui dégrade les représentations.
+
+### `train.py` — Pipeline principal
+
+Fichier central organisé en 5 sections :
+
+| Section | Fonctions principales | Rôle |
+|---------|----------------------|------|
+| 1. Données | `load_and_inspect_data()`, `inspect_dataset_full()` | Chargement, nettoyage, encodage des labels |
+| 2. Entraînement | `train_epoch()` | Forward + backward + gradient clipping + scheduler |
+| 3. Évaluation | `eval_epoch()` | Inférence sans gradient, calcul des métriques |
+| 4. Inférence | `predict()`, `print_prediction()` | Prédiction sur un article, mode combined |
+| 5. Pipelines | `run_training()`, `run_test_inference()` | Orchestration complète via CLI |
+
+**Entrées CLI :**
+```bash
+python train.py                   # Entraînement complet (run_training)
+python train.py --inspect         # Inspection dataset (inspect_dataset_full)
+python train.py --test-inference  # Tests inférence (run_test_inference)
+```
+
+### `utils.py` — Utilitaires
+
+| Fonction                        | Rôle                                             |
+|---------------------------------|--------------------------------------------------|
+| `set_seed(seed)`                | Reproductibilité totale (Python, NumPy, PyTorch) |
+| `compute_metrics()`             | Accuracy + F1-macro (sklearn)                    |
+| `plot_confusion_matrix()`       | Heatmap seaborn, sauvegarde PNG                  |
+| `plot_learning_curves()`        | Courbes loss / accuracy / F1 par epoch           |
+| `plot_class_distribution()`     | Barplot de la distribution des classes           |
+| `init_wandb()`                  | Initialisation d'un run Weights & Biases         |
+| `log_epoch_metrics()`           | Log métriques par epoch sur W&B                  |
+| `log_confusion_matrix_wandb()`  | Matrice de confusion interactive W&B             |
+| `log_image_wandb()`             | Log d'une image PNG sur W&B                      |
+| `log_final_summary()`           | Résumé final du run (best_val_*)                 |
+
 
 
 ##  Déploiement de nos applications et modèles
