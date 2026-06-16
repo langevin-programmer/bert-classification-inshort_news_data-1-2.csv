@@ -392,6 +392,77 @@ Le fallback est géré **automatiquement** dans `predict()`. Le code appelant n'
 - **Matrice de confusion** — analyse des erreurs par classe
 - **Courbes d'apprentissage** — détection overfitting / underfitting
 
+## Résultats obtenus
+
+> Métriques calculées sur le set de validation (20% du dataset, 964 exemples) — **meilleur checkpoint (epoch 2, val_loss minimale)**.
+
+### Métriques globales
+
+| Métrique              | Valeur     |
+|-----------------------|-----------|
+| **Accuracy**          | **93.98%** |
+| **F1-macro**          | **93.65%** |
+| Précision macro       | 93.19%     |
+| Recall macro          | 94.15%     |
+| Exemples val. totaux  | 964        |
+| Exemples corrects     | 906        |
+
+### Métriques par classe
+
+| Classe          | Précision | Recall | F1-score | Support |
+|-----------------|-----------|--------|----------|---------|
+| automobile      | 90.6%     | 94.1%  | 92.3%    | 51      |
+| entertainment   | 98.4%     | 95.0%  | 96.7%    | 200     |
+| politics        | 97.3%     | 99.1%  | 98.2%    | 109     |
+| science         | 88.0%     | 93.6%  | 90.7%    | 78      |
+| sports          | 98.2%     | 98.2%  | 98.2%    | 171     |
+| **technology**  | 86.8%     | 87.3%  | **87.0%**| 150     |
+| world           | 93.1%     | 91.7%  | 92.4%    | 205     |
+
+> **Classe la plus difficile : `technology`** (F1 = 87.0%) — confusions principalement avec `world` (9 cas) et `science` (5 cas), sémantiquement proches.  
+> **Classe la mieux classifiée : `politics`** (F1 = 98.2%) — vocabulaire très distinctif.
+
+### Courbes d'apprentissage
+
+Les courbes montrent un entraînement sain sur 4 epochs :
+
+| Epoch | Train Loss | Val Loss | Train Acc | Val Acc | Val F1 |
+|-------|-----------|----------|-----------|---------|--------|
+| 1     | 0.75     |  0.29    |  78%      |  92%    |  90%   |
+| 2     | 0.23     |  0.25    |  93%      |  93%    |  92%   |
+| 3     | 0.15     |  0.25    |  95%      |  94%    |  93%   |
+| 4     | 0.11     |  0.22    |  97%      |  95%    |  94%   |
+
+**Observations clés :**
+- La `val_loss` reste stable de l'epoch 1 à 4 sans signe d'overfitting significatif
+- La `train_loss` chute fortement (0.75 → 0.11), signe d'un bon apprentissage
+- La `val_accuracy` démarre déjà à ~92% dès l'epoch 1, témoignant de la puissance des représentations pré-entraînées de BERT
+- Le **meilleur checkpoint est sauvegardé à l'epoch 2** (val_loss minimale =  0.25)
+
+### Matrice de confusion
+
+```
+                 automobile  entertainment  politics  science  sports  technology  world
+automobile  [        48              0         0        0        0          3        0  ]
+entertainment[        0             190         1        0        3          3        3  ]
+politics    [         0              1        108        0        0          0        0  ]
+science     [         0              0          0       73        0          5        0  ]
+sports      [         0              1          0        0      168          0        2  ]
+technology  [         5              0          0        5        0        131        9  ]
+world       [         0              1          2        5        0          9      188  ]
+```
+
+**Principales confusions détectées :**
+
+| Vrai label   | Prédit comme | Nb | Explication                                      |
+|--------------|--------------|----|--------------------------------------------------|
+| technology   | world        |  9 | Articles tech à portée géopolitique              |
+| world        | technology   |  9 | Actualités mondiales liées à la tech             |
+| world        | science      |  5 | Découvertes scientifiques à impact mondial       |
+| technology   | science      |  5 | Recherche appliquée à la frontière des deux      |
+| science      | technology   |  5 | Innovations scientifiques à connotation tech     |
+| automobile   | technology   |  3 | Véhicules électriques / technologie automobile   |
+| entertainment| sports       |  3 | E-sport ou célébrités du sport                   |
 
 ## Compétences développées
 
