@@ -310,6 +310,65 @@ Lance le pipeline complet :
 4. Sauvegarde automatique du meilleur checkpoint (selon `val_loss`)
 5. Génération des courbes d'apprentissage et de la matrice de confusion
 
+## Hyperparamètres
+
+Tous les hyperparamètres sont centralisés dans `CONFIG` (`utils.py`) :
+
+| Paramètre        | Valeur                                     | Description                             |
+|------------------|--------------------------------------------|-----------------------------------------|
+| `model_name`     | `google-bert/bert-base-multilingual-cased` | Modèle pré-entraîné HuggingFace         |
+| `max_length`     | `256`                                      | Longueur max de tokenisation (tokens)   |
+| `num_epochs`     | `4`                                        | Nombre d'epochs d'entraînement          |
+| `batch_size`     | `16`                                       | Taille des mini-batchs                  |
+| `learning_rate`  | `3e-5`                                     | Taux d'apprentissage AdamW              |
+| `weight_decay`   | `0.01`                                     | Décroissance de poids (L2)              |
+| `warmup_ratio`   | `0.10`                                     | 10% des steps en phase de warmup        |
+| `clip_grad`      | `1.0`                                      | Gradient clipping (norme maximale)      |
+| `val_split`      | `0.20`                                     | Proportion du set de validation         |
+| `seed`           | `42`                                       | Graine aléatoire (reproductibilité)     |
+| `save_dir`       | `best_model`                               | Répertoire de sauvegarde du checkpoint  |
+
+### Justification des choix
+
+**`max_length = 256`** — couvre ~95% des paires titre+article sans troncature, tout en restant bien en dessous de la limite de 512 tokens de BERT. À vérifier avec `--inspect` sur votre dataset.
+
+**`learning_rate = 3e-5`** — plage standard pour le fine-tuning BERT (entre 2e-5 et 5e-5). Des valeurs trop élevées causent un *catastrophic forgetting* des représentations pré-entraînées.
+
+**`warmup_ratio = 0.10`** — le learning rate monte linéairement pendant les 10 premiers % des steps avant de décroître. Cela stabilise les premières mises à jour et protège les poids pré-entraînés.
+
+**`clip_grad = 1.0`** — évite l'explosion du gradient, particulièrement utile avec les Transformers dont les gradients peuvent être instables en début d'entraînement.
+
+**`weight_decay = 0.01`** — régularisation L2 découplée (AdamW), réduit le risque d'overfitting sans pénaliser les biais et couches de normalisation.
+
+---
+
+## Approche combinée
+
+L'entrée BERT est construite en concaténant le titre et l'article avec un point-espace :
+
+```
+Texte d'entrée = headline + ". " + article
+     ↓
+[CLS] titre . article [SEP]
+     ↓
+Tokenisation + padding → max_length = 256 tokens
+     ↓
+BERT encoder → [CLS] embedding → Linear → Softmax → Classe
+```
+
+### Comportement selon les champs disponibles
+
+| Situation              | `headline` | `article` | Texte envoyé à BERT          | Qualité       |
+|------------------------|------------|-----------|------------------------------|---------------|
+| **Cas idéal**          | ok          | ok         | `headline + ". " + article`  | Maximale      |
+| **Fallback titre**     | ok          | vide      | `headline` seul              | Réduite       |
+| **Fallback article**   | vide       | ok         | `article` seul               | Réduite       |
+| **Erreur**             | vide       | vide      | `ValueError` levée           | —             |
+
+Le fallback est géré **automatiquement** dans `predict()`. Le code appelant n'a jamais besoin de tester les cas — il passe toujours `mode='combined'`.
+
+> Les résultats obtenus (F1 = 93.65%) sont issus du cas idéal titre+article, aligné avec le mode d'entraînement. Les cas de fallback produisent des prédictions valides mais la confiance est généralement plus faible.
+
 
 ## Métriques évaluées
 
