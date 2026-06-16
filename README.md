@@ -134,6 +134,27 @@ Vous les  touverez via les différents liens ci-dessous:
 Nous vous informons par ailleurs qu'avant de déployer application ci-dessus, nous avons déployé une version qui permet de classifier uniquement les **titres** des articles(le modèle associé est en en effet entrainé uniquement sur les colonnes `news_headline` et `news_category`). Nous vous donnons également accès à cette dernière [application](https://huggingface.co/spaces/jfo25/classification-titres-articles-de-presse) ainsi qu'au [modèle](https://huggingface.co/jfo25/model-classification-titres-articles-de-presse/tree/main) associé. 
 
 
+## Dépendances
+
+```
+torch>=2.0.0          # Framework deep learning
+transformers>=4.40.0  # Modèle BERT + tokenizer HuggingFace
+pandas>=2.0.0         # Chargement et manipulation du CSV
+scikit-learn>=1.3.0   # Split stratifié, métriques, LabelEncoder
+numpy>=1.24.0         # Calculs numériques
+matplotlib>=3.7.0     # Visualisations
+seaborn>=0.12.0       # Heatmap matrice de confusion
+wandb>=0.17.0         # Suivi des expériences
+gradio>=4.0.0         # Interface de démonstration
+tqdm>=4.65.0          # Barres de progression
+```
+
+Installation complète :
+
+```bash
+pip install -r requirements.txt
+```
+
 
 
 ## Lancer le projet
