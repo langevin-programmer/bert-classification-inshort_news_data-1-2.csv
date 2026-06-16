@@ -142,7 +142,7 @@ voir le repertoire [data-inspect](data-inspect)  pour plus de détails.
 
 ### `model.py` — Configuration & modèle
 
-Contient le dictionnaire `CONFIG` centralisé et toutes les fonctions de gestion du modèle.
+Contient toutes les fonctions de gestion du modèle.
 
 ```python
 from model import CONFIG, load_model, load_tokenizer, save_model, load_saved_model
@@ -193,6 +193,8 @@ python train.py --test-inference  # Tests inférence (run_test_inference)
 ```
 
 ### `utils.py` — Utilitaires
+
+Contient au début  le dictionnaire `CONFIG` centralisé et les fonctions suivantes : 
 
 | Fonction                        | Rôle                                             |
 |---------------------------------|--------------------------------------------------|
