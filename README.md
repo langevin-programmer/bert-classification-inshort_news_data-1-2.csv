@@ -54,7 +54,7 @@ Avant d’écrire la moindre ligne de code, nous inspectons le dataset :
 -  Longueur des textes (min, max, moyenne en nombre de tokens) , pour choisir max_length
 -  Afficher au moins 5 exemples de textes avec leurs labels
 
-voir le repertoire  `data-inspect`  pour plus de détails. 
+voir le repertoire [data-inspect](data-inspect)  pour plus de détails. 
 
 
 
