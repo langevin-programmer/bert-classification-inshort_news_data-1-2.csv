@@ -104,6 +104,27 @@ Génère deux graphiques d'analyse :
 > **Recommandation :** lancer `--inspect` avant tout entraînement pour vérifier que `max_length=256` couvre bien ≥ 95% des paires titre+article de votre dataset.
 
 
+### Flux de données
+
+```
+CSV  ──►  load_and_inspect_data()  ──►  TextClassificationDataset
+                                               │
+                                    ┌──────────┴──────────┐
+                                 DataLoader            DataLoader
+                                  (train)                (val)
+                                    │                     │
+                          BertForSequenceClassification   │
+                          (bert-base-multilingual-cased)  │
+                                    │                     │
+                             CrossEntropyLoss ◄───────────┘
+                                    │
+                          AdamW + LinearScheduler
+                          (warmup 10% → décroissance)
+                                    │
+                          Sauvegarde best_model/
+                          (critère : val_loss minimale)
+```
+
 
 ## Analyse du dataset 
 
