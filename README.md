@@ -66,7 +66,7 @@ Nous utilisons Python 3.9+, PyTorch ≥2.0, transformers (Hugging Face), Gradio,
 ##  Déploiement de nos applications et modèles
 
 Nous avons déployé notre application et modèle sur la plateforme [huggingface](https://huggingface.co/). 
-Vous touverez via les différents liens ci-dessus:
+Vous les  touverez via les différents liens ci-dessous:
 - [Notre application de classification du titre + contenu d'articles de presse](https://huggingface.co/spaces/jfo25/DL2-Devoir-3-bert-classification-articles-de-presse)
 - [Sauvegarde du modèle associé à l'application ci-dessus](https://huggingface.co/jfo25/DL2-Devoir-3-bert-model-classification-articles-de-presse/tree/main)
 
@@ -84,7 +84,7 @@ Avant de lancer localement le projet , il importe de suivre les étapes suivante
 - Cloner localement(sur votre machine)  le repertoire de notre projet sur cette la plateforme [Github](https://github.com/)
 - créer un environnement virtuel Python 
 - Installez les dépendances du projet que vous retrouvez dans le [requirements.txt](./requirements.txt)
-- Disposer en plus dans arborescence du projet  du repertoire `best_model`(sauvegarde de notre modèle) que vous pouvez  obtenir en éxécutant localement(si votre machine dispose  d'assez de ressources **GPU**) `python train.py` , dans le **cas contraire**, nous vous recommandons la plateforme [Google Colab](https://colab.research.google.com/) ,pour cela, nous vous fournissons en plus  notre [Notebook Colab](https://colab.research.google.com/drive/1SJz78eFJkzCT273h7R6_NZajl-4NnX1H?usp=sharing)  utilisé pour l'obtenir(le Repertoire`best_model`) et bien d'autres(les différents graphiques que vous trouvez dans les repertoires  [data-inspect](data-inspect) et [graphiques-du-modèle].Mieux , vous pouvez le télécharger directement sur [notre repectoire HuggingFace](https://huggingface.co/jfo25/DL2-Devoir-3-bert-model-classification-articles-de-presse/tree/main), cela peut prendre quelques minutes , il s'agit en effet d'un fichier d'environ  **700MB**.
+- Disposer en plus dans arborescence du projet  du repertoire `best_model`(sauvegarde de notre modèle) que vous pouvez  obtenir en éxécutant localement(si votre machine dispose  d'assez de ressources **GPU**) `python train.py` , dans le **cas contraire**, nous vous recommandons la plateforme [Google Colab](https://colab.research.google.com/) ,pour cela, nous vous fournissons en plus  notre [Notebook Colab](https://colab.research.google.com/drive/1SJz78eFJkzCT273h7R6_NZajl-4NnX1H?usp=sharing)  utilisé pour l'obtenir(le Repertoire`best_model`) et bien d'autres(les différents graphiques que vous trouvez dans les repertoires  [data-inspect](data-inspect) et [graphiques-du-model](graphiques-du-model).Mieux , vous pouvez le télécharger directement sur [notre repectoire HuggingFace](https://huggingface.co/jfo25/DL2-Devoir-3-bert-model-classification-articles-de-presse/tree/main), cela peut prendre quelques minutes , il s'agit en effet d'un fichier d'environ  **700MB**.
 - lancer la commande `python demo.py`
 - Entrez dans la barre d'adresse de votre navigateur [http://127.0.0.1:7860/]() pour voir le rendu de notre application.     
 
