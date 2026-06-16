@@ -25,6 +25,10 @@
 
 ---
 
+## L'application est déployée sur huggingface et est accessible sur : https://huggingface.co/spaces/jfo25/DL2-Devoir-3-bert-classification-articles-de-presse 
+
+
+
 ## Vue d'ensemble
 
 
