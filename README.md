@@ -104,16 +104,6 @@ Génère deux graphiques d'analyse :
 > **Recommandation :** lancer `--inspect` avant tout entraînement pour vérifier que `max_length=256` couvre bien ≥ 95% des paires titre+article de votre dataset.
 
 
-## Métriques évaluées
-
-- **Accuracy** — taux de classification globale
-- **F1-score** — équilibre précision / rappel
-- **Matrice de confusion** — analyse des erreurs par classe
-- **Courbes d'apprentissage** — détection overfitting / underfitting
-
-
-
-
 
 ## Analyse du dataset 
 
@@ -201,7 +191,12 @@ Lance le pipeline complet :
 5. Génération des courbes d'apprentissage et de la matrice de confusion
 
 
+## Métriques évaluées
 
+- **Accuracy** — taux de classification globale
+- **F1-score** — équilibre précision / rappel
+- **Matrice de confusion** — analyse des erreurs par classe
+- **Courbes d'apprentissage** — détection overfitting / underfitting
 
 
 ## Compétences développées
